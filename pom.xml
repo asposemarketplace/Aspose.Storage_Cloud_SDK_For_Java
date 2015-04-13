@@ -22,7 +22,7 @@
 		<repository>
 			<id>AsposeJavaAPI</id>
 			<name>Aspose Java API</name>
-			<url>http://maven.aspose.com/artifactory/simple/ext-release-local/</url>
+			<url>http://maven.aspose.com/repository/repo</url>
 		</repository>
 	</repositories>
 
