@@ -64,7 +64,7 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/file/{path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
+    String resourcePath = "/storage/file/{Path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -73,10 +73,16 @@ public class StorageApi {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(versionId!=null)
 	  resourcePath = resourcePath.replace("{" + "versionId" + "}" , apiInvoker.toPathValue(versionId));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]versionId.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -113,6 +119,8 @@ try {
 
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -146,7 +154,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/file/{path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
+    String resourcePath = "/storage/file/{Path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -155,10 +163,16 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(versionId!=null)
 	  resourcePath = resourcePath.replace("{" + "versionId" + "}" , apiInvoker.toPathValue(versionId));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]versionId.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -192,7 +206,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/exist/{path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
+    String resourcePath = "/storage/exist/{Path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -201,10 +215,16 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(versionId!=null)
 	  resourcePath = resourcePath.replace("{" + "versionId" + "}" , apiInvoker.toPathValue(versionId));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]versionId.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -237,7 +257,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/version/{path}/?appSid={appSid}&amp;storage={storage}";
+    String resourcePath = "/storage/version/{Path}/?appSid={appSid}&amp;storage={storage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -246,8 +266,12 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -292,14 +316,24 @@ try {
 
     if(src!=null)
 	  resourcePath = resourcePath.replace("{" + "src" + "}" , apiInvoker.toPathValue(src));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]src.*?(?=&|\\?|$)", "");
     if(dest!=null)
 	  resourcePath = resourcePath.replace("{" + "dest" + "}" , apiInvoker.toPathValue(dest));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]dest.*?(?=&|\\?|$)", "");
     if(versionId!=null)
 	  resourcePath = resourcePath.replace("{" + "versionId" + "}" , apiInvoker.toPathValue(versionId));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]versionId.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     if(destStorage!=null)
 	  resourcePath = resourcePath.replace("{" + "destStorage" + "}" , apiInvoker.toPathValue(destStorage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]destStorage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -336,7 +370,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/file/{path}/?appSid={appSid}&amp;newdest={newdest}&amp;versionId={versionId}&amp;storage={storage}&amp;destStorage={destStorage}";
+    String resourcePath = "/storage/file/{Path}/?appSid={appSid}&amp;newdest={newdest}&amp;versionId={versionId}&amp;storage={storage}&amp;destStorage={destStorage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -345,14 +379,24 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(newdest!=null)
 	  resourcePath = resourcePath.replace("{" + "newdest" + "}" , apiInvoker.toPathValue(newdest));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]newdest.*?(?=&|\\?|$)", "");
     if(versionId!=null)
 	  resourcePath = resourcePath.replace("{" + "versionId" + "}" , apiInvoker.toPathValue(versionId));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]versionId.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     if(destStorage!=null)
 	  resourcePath = resourcePath.replace("{" + "destStorage" + "}" , apiInvoker.toPathValue(destStorage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]destStorage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "multipart/form-data"};
 
@@ -392,7 +436,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/file/{path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
+    String resourcePath = "/storage/file/{Path}/?appSid={appSid}&amp;versionId={versionId}&amp;storage={storage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -401,10 +445,16 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(versionId!=null)
 	  resourcePath = resourcePath.replace("{" + "versionId" + "}" , apiInvoker.toPathValue(versionId));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]versionId.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "multipart/form-data"};
 
@@ -443,7 +493,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/folder/{path}/?appSid={appSid}&amp;storage={storage}&amp;recursive={recursive}";
+    String resourcePath = "/storage/folder/{Path}/?appSid={appSid}&amp;storage={storage}&amp;recursive={recursive}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -452,10 +502,16 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     if(recursive!=null)
 	  resourcePath = resourcePath.replace("{" + "recursive" + "}" , apiInvoker.toPathValue(recursive));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]recursive.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -484,7 +540,7 @@ try {
   public ResponseMessage GetListFiles (String Path, String storage) {
     Object postBody = null;
     // create path and map variables
-    String resourcePath = "/storage/folder/{path}/?appSid={appSid}&amp;storage={storage}";
+    String resourcePath = "/storage/folder/{Path}/?appSid={appSid}&amp;storage={storage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -493,8 +549,12 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -538,12 +598,20 @@ try {
 
     if(src!=null)
 	  resourcePath = resourcePath.replace("{" + "src" + "}" , apiInvoker.toPathValue(src));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]src.*?(?=&|\\?|$)", "");
     if(dest!=null)
 	  resourcePath = resourcePath.replace("{" + "dest" + "}" , apiInvoker.toPathValue(dest));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]dest.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     if(destStorage!=null)
 	  resourcePath = resourcePath.replace("{" + "destStorage" + "}" , apiInvoker.toPathValue(destStorage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]destStorage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -578,7 +646,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/folder/{path}/?appSid={appSid}&amp;newdest={newdest}&amp;storage={storage}&amp;destStorage={destStorage}";
+    String resourcePath = "/storage/folder/{Path}/?appSid={appSid}&amp;newdest={newdest}&amp;storage={storage}&amp;destStorage={destStorage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -587,12 +655,20 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(newdest!=null)
 	  resourcePath = resourcePath.replace("{" + "newdest" + "}" , apiInvoker.toPathValue(newdest));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]newdest.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     if(destStorage!=null)
 	  resourcePath = resourcePath.replace("{" + "destStorage" + "}" , apiInvoker.toPathValue(destStorage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]destStorage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -626,7 +702,7 @@ try {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String resourcePath = "/storage/folder/{path}/?appSid={appSid}&amp;storage={storage}&amp;destStorage={destStorage}";
+    String resourcePath = "/storage/folder/{Path}/?appSid={appSid}&amp;storage={storage}&amp;destStorage={destStorage}";
 	resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?").replace("toFormat={toFormat}", "format={format}");
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -635,10 +711,16 @@ try {
 
     if(Path!=null)
 	  resourcePath = resourcePath.replace("{" + "Path" + "}" , apiInvoker.toPathValue(Path));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]Path.*?(?=&|\\?|$)", "");
     if(storage!=null)
 	  resourcePath = resourcePath.replace("{" + "storage" + "}" , apiInvoker.toPathValue(storage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
     if(destStorage!=null)
 	  resourcePath = resourcePath.replace("{" + "destStorage" + "}" , apiInvoker.toPathValue(destStorage));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]destStorage.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
@@ -679,6 +761,8 @@ try {
 
     if(name!=null)
 	  resourcePath = resourcePath.replace("{" + "name" + "}" , apiInvoker.toPathValue(name));
+	  else
+	  resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
       "application/json"};
 
