@@ -1,9 +1,8 @@
 package com.aspose.storage.api;
 
-import com.aspose.client.ApiException;
-import com.aspose.client.ApiInvoker;
-import com.aspose.client.ApiInvokerResponse;
-
+import com.aspose.storage.client.ApiException;
+import com.aspose.storage.client.ApiInvoker;
+import com.aspose.storage.client.ApiInvokerResponse;
 import com.aspose.storage.model.DiscUsageResponse;
 import com.aspose.storage.model.ResponseMessage;
 import com.aspose.storage.model.RemoveFolderResponse;
@@ -31,10 +30,25 @@ public class StorageApi {
     apiInvoker.addDefaultHeader(apiInvoker.APP_SID, appSid);
   }
 
+  public StorageApi(String basePath, String apiKey, String appSid, boolean isDebug) {
+          this.basePath = basePath;
+          apiInvoker.addDefaultHeader(apiInvoker.API_KEY, apiKey);
+          apiInvoker.addDefaultHeader(apiInvoker.APP_SID, appSid);
+          if(isDebug)
+                  apiInvoker.enableDebug();
+        }
+  
   public StorageApi(String apiKey, String appSid) {
     apiInvoker.addDefaultHeader(apiInvoker.API_KEY, apiKey);
     apiInvoker.addDefaultHeader(apiInvoker.APP_SID, appSid);
   }
+
+  public StorageApi(String apiKey, String appSid, boolean isDebug) {
+          apiInvoker.addDefaultHeader(apiInvoker.API_KEY, apiKey);
+          apiInvoker.addDefaultHeader(apiInvoker.APP_SID, appSid);
+          if(isDebug)
+                  apiInvoker.enableDebug();
+        }
 
   public ApiInvoker getInvoker() {
     return apiInvoker;
